@@ -1,0 +1,10 @@
+extends ./layouts/common.pug
+
+block content
+
+	form(action='/users/search', method='GET')
+		input(type='text', name='q')
+		button Search
+
+	h1 Hello #{name}
+	a(href='/users') User List
