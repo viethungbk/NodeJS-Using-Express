@@ -1,3 +1,4 @@
+/*
 var db = require('../db');
 
 module.exports.index = function(req, res) {
@@ -11,3 +12,14 @@ module.exports.index = function(req, res) {
 		products: db.get('products').value().slice(start, end)
 	});
 }
+*/
+
+var Product = require('../models/product.model');
+
+module.exports.index = function(req, res) {
+	Product.find().then(function(products) {
+		res.render('products/index', {
+			products: products
+		});
+	});
+};
